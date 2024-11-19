@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -20,9 +21,9 @@ export default function NavBar() {
         </button>
         <ul className='flex flex-col gap-6 lg:flex-row p-3'>
           <li>
-            <a href='#' className='p-2'>
+            <NavLink to='/' className='p-2'>
               Home
-            </a>
+            </NavLink>
           </li>
           <li>
             <a href='#' className='p-2'>
