@@ -2,7 +2,7 @@
   "name": "jsf-ca",
   "version": "0.0.3",
   "description": "course assignment for javascript frameworks",
-  "main": "index.js",
+  "main": "index.jsx",
   "type": "module",
   "scripts": {
     "dev": "vite",
