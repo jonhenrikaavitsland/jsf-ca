@@ -1,9 +1,3 @@
-import NavBar from './NavBar';
-
 export default function Header() {
-  return (
-    <header className='bg-slate-400 h-40'>
-      <NavBar />
-    </header>
-  );
+  return <header className='bg-slate-400 h-40'></header>;
 }
