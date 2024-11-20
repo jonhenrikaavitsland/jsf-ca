@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import { useStore } from '../data/store';
-import ProductCard from '../components/ProductCard';
+import { useStore } from '../../data/store';
+import ProductCard from '../ProductCard';
 
 export default function Home() {
   const { products, fetchProducts } = useStore();
