@@ -1,5 +1,5 @@
-import CartIcon from './CartIcon';
-import NavBar from './NavBar';
+import CartIcon from '../CartIcon';
+import NavBar from '../NavBar';
 
 export default function Header() {
   return (
