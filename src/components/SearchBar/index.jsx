@@ -21,9 +21,9 @@ export default function SearchBar({ products }) {
     setFilteredProducts(matches);
   };
 
-  const handleProductClick = (productId) => {
+  function handleProductClick(productId) {
     navigate(`/product/${productId}`);
-  };
+  }
 
   return (
     <div className='relative w-2/3 mx-auto'>
