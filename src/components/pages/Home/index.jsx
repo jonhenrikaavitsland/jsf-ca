@@ -13,13 +13,13 @@ export default function Home() {
   console.log('Store:', products);
 
   return (
-    <>
+    <div className='flex flex-col gap-4'>
       <SearchBar products={products} />
       <div className='flex flex-wrap gap-6 justify-center'>
         {products.map((product) => (
           <ProductCard product={product} key={product.id} />
         ))}
       </div>
-    </>
+    </div>
   );
 }
