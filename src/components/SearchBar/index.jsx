@@ -10,6 +10,12 @@ export default function SearchBar({ products }) {
     const input = e.target.value;
     setSearchTerm(input);
 
+    // Clear matches if the input is empty
+    if (input.trim() === '') {
+      setFilteredProducts([]);
+      return;
+    }
+
     // Filter products based on the input
     const matches = products.filter((product) => product.title.toLowerCase().includes(input.toLowerCase()));
     setFilteredProducts(matches);
