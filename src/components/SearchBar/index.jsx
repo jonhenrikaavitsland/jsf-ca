@@ -26,34 +26,12 @@ export default function SearchBar({ products }) {
   };
 
   return (
-    <div style={{ position: 'relative', width: '300px', margin: '0 auto' }}>
-      <input type='text' placeholder='Search for products...' value={searchTerm} onChange={handleInputChange} style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }} />
+    <div className='relative w-2/3 mx-auto'>
+      <input className='w-full p-2 rounded-xl border-4 border-slate-400' type='text' placeholder='Search for products...' value={searchTerm} onChange={handleInputChange} />
       {filteredProducts.length > 0 && (
-        <ul
-          style={{
-            position: 'absolute',
-            top: '100%',
-            left: '0',
-            right: '0',
-            backgroundColor: '#fff',
-            border: '1px solid #ccc',
-            borderTop: 'none',
-            listStyleType: 'none',
-            padding: '0',
-            margin: '0',
-            zIndex: '10',
-          }}
-        >
+        <ul className='absolute top-full inset-x-0 bg-white border-[1px] z-10 p-0 m-0'>
           {filteredProducts.map((product) => (
-            <li
-              key={product.id}
-              onClick={() => handleProductClick(product.id)}
-              style={{
-                padding: '10px',
-                cursor: 'pointer',
-                borderBottom: '1px solid #ccc',
-              }}
-            >
+            <li className='p-2.5 cursor-pointer border-b-[1px] border-slate-400' key={product.id} onClick={() => handleProductClick(product.id)}>
               {product.title}
             </li>
           ))}
