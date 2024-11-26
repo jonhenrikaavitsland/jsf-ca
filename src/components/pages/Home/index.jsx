@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useStore } from '../../../data/store';
+import { useStore } from '../../../data/useStore';
 import ProductCard from '../../ProductCard';
 import SearchBar from '../../SearchBar';
 
