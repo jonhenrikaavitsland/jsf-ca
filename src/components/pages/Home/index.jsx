@@ -38,8 +38,6 @@ export default function Home() {
     return <div>Error</div>;
   }
 
-  console.log(data);
-
   return (
     <div className='flex flex-col gap-4'>
       <SearchBar products={data.data} />

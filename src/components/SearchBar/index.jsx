@@ -31,7 +31,7 @@ export default function SearchBar({ products }) {
       {filteredProducts.length > 0 && (
         <ul className='absolute top-full inset-x-0 bg-white border-[1px] z-10 p-0 m-0'>
           {filteredProducts.map((product) => (
-            <li className='p-2.5 cursor-pointer border-b-[1px] border-slate-400 flex gap-3 items-end' key={product.id} onClick={() => handleProductClick(product.id)}>
+            <li className='p-2.5 cursor-pointer border-b-[1px] border-slate-400 flex gap-3 items-end hover:bg-slate-200' key={product.id} onClick={() => handleProductClick(product.id)}>
               <img src={product.image.url} alt={product.image.alt} className='size-20 object-cover' />
               <span>{product.title}</span>
             </li>

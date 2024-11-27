@@ -35,8 +35,6 @@ export default function ProductPage() {
     return <div>Error</div>;
   }
 
-  console.log(data.data);
-
   return (
     <div className='md:flex gap-4 md:w-2/3 lg:w-1/2 mx-auto'>
       <div>
