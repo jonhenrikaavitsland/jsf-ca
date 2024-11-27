@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import ProductCard from '../../ProductCard';
-import SearchBar from '../../SearchBar';
+import ProductCard from '../../components/ProductCard';
+import SearchBar from '../../components/SearchBar';
 
 function useApi(url) {
   const [data, setData] = useState([]);
