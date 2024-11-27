@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useCartStore } from '../../stores/cartStore';
 
 export default function ProductPage() {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   let { productId } = useParams();
+
+  const { addToCart } = useCartStore;
 
   useEffect(() => {
     async function getData(url) {
@@ -50,7 +53,9 @@ export default function ProductPage() {
           {data.data.discountedPrice < data.data.price && <span className='bg-red-600 text-white font-bold px-2 ml-2 rounded-xl'>{`-${((1 - data.data.discountedPrice / data.data.price) * 100).toFixed(0)}%`}</span>}
         </div>
         <div>
-          <button className='p-6 bg-orange-600 rounded-xl text-white font-black text-3xl hover:bg-orange-700'>BUY NOW</button>
+          <button className='p-6 bg-orange-600 rounded-xl text-white font-black text-3xl hover:bg-orange-700' onClick={() => addToCart(data.data)}>
+            BUY NOW
+          </button>
         </div>
       </section>
     </div>
