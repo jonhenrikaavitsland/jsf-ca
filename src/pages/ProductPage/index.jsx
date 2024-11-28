@@ -3,12 +3,12 @@ import { useParams } from 'react-router-dom';
 import { useCartStore } from '../../stores/cartStore';
 
 export default function ProductPage() {
+  const addToCart = useCartStore((state) => state.addToCart);
+  const cart = useCartStore();
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   let { productId } = useParams();
-
-  const { addToCart } = useCartStore;
 
   useEffect(() => {
     async function getData(url) {
@@ -37,6 +37,9 @@ export default function ProductPage() {
   if (isError) {
     return <div>Error</div>;
   }
+
+  console.log(data.data);
+  console.log('CART:', cart);
 
   return (
     <div className='md:flex gap-4 md:w-2/3 lg:w-1/2 mx-auto'>
