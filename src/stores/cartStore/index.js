@@ -1,25 +1,16 @@
 import { create } from "zustand";
 
 export const useCartStore = create((set) => ({
-  cart: [],
+  cart: [], // store only 1 max of each item for this store
   addToCart: (product) =>
-    set((state) => ({
-      cart: [...state.cart, { ...product, quantity: 1 }],
-    })),
-  incrementQuantity: (productId) =>
-    set((state) => ({
-      cart: state.cart.map((item) =>
-        item.id === productId ? { ...item, quantity: item.quantity + 1 } : item,
-      ),
-    })),
-  decrementQuantity: (productId) =>
-    set((state) => ({
-      cart: state.cart.map((item) =>
-        (item.id === productId && item.quantity > 1
-          ? { ...item, quantity: item.quantity - 1 }
-          : item
-        ).filter((item) => item.quantity > 0),
-      ),
-    })),
-  emptyCart: () => set({ cart: [] }),
+    set((state) => {
+      const isAlreadyInCart = state.cart.some((item) => item.id === product.id);
+      if (isAlreadyInCart) {
+        // If the product is already in the cart, do nothing
+        return state;
+      }
+      // Add product to cart if it's not already present
+      return { cart: [...state.cart, product] };
+    }),
+  emptyCart: () => set({ cart: [] }), // Clear the cart
 }));
