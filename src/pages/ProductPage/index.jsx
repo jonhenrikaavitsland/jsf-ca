@@ -1,9 +1,13 @@
-import { useEffect, useReducer, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { initialState, reducer } from '../../stores/cartStore';
+import { useCart } from '../../stores/cartStore/CartContext';
 
 export default function ProductPage() {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const { dispatch } = useCart();
+  const addToCart = () => {
+    dispatch({ type: 'addProduct', payload: data.data });
+  };
+
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -37,8 +41,6 @@ export default function ProductPage() {
     return <div>Error</div>;
   }
 
-  console.log('cart:', state);
-
   return (
     <div className='md:flex gap-4 md:w-2/3 lg:w-1/2 mx-auto'>
       <div>
@@ -54,7 +56,7 @@ export default function ProductPage() {
           {data.data.discountedPrice < data.data.price && <span className='bg-red-600 text-white font-bold px-2 ml-2 rounded-xl'>{`-${((1 - data.data.discountedPrice / data.data.price) * 100).toFixed(0)}%`}</span>}
         </div>
         <div>
-          <button className='p-6 bg-orange-600 rounded-xl text-white font-black text-3xl hover:bg-orange-700' onClick={() => dispatch({ type: 'addProduct', payload: data.data })}>
+          <button className='p-6 bg-orange-600 rounded-xl text-white font-black text-3xl hover:bg-orange-700' onClick={addToCart}>
             BUY NOW
           </button>
         </div>

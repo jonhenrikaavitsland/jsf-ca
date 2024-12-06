@@ -1,4 +1,9 @@
-export default function CartIcon({ cartLength }) {
+import { useCart } from '../../stores/cartStore/CartContext';
+
+export default function CartIcon() {
+  const { cart } = useCart();
+  const cartLength = cart.reduce((sum, item) => sum + item.quantity, 0);
+
   return (
     <div className='relative p-3'>
       <button>
