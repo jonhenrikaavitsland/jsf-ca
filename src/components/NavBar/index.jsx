@@ -26,9 +26,9 @@ export default function NavBar() {
             </NavLink>
           </li>
           <li>
-            <a href='#' className='p-2'>
+            <NavLink to='/contact/' className='p-2'>
               Contact
-            </a>
+            </NavLink>
           </li>
         </ul>
       </div>
