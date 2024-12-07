@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import ProductPage from './pages/ProductPage';
 import CheckoutPage from './pages/CheckoutPage';
 import SuccessPage from './pages/SuccessPage';
+import ContactPage from './pages/ContactPage';
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
           <Route path='/product/:productId' element={<ProductPage />} />
           <Route path='/checkout/' element={<CheckoutPage />} />
           <Route path='/success/' element={<SuccessPage />} />
+          <Route path='/contact/' element={<ContactPage />} />
         </Route>
       </Routes>
     </div>
