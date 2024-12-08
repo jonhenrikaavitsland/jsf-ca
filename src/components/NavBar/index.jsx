@@ -9,7 +9,7 @@ export default function NavBar() {
   }
 
   return (
-    <nav>
+    <nav className='z-10'>
       <div className='p-3'>
         <button onClick={toggleMenu} className='h-8 w-8 lg:hidden'>
           <img src='/burger-sharp-duotone-regular.svg' alt='menu' />
