@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-export default function SuccessPage() {
+export default function CheckoutSuccessPage() {
   return (
     <section>
       <h1>Success!</h1>
