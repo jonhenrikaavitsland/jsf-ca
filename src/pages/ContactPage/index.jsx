@@ -37,7 +37,9 @@ export default function ContactPage() {
   return (
     <div className='flex justify-center'>
       <fieldset className='border-2 border-black border-dotted w-11/12 sm:w-2/3 p-4 rounded-xl'>
-        <legend className='bg-black text-white p-4 font-bold rounded-full'>Contact Us:</legend>
+        <legend className='bg-black text-white p-4 font-bold rounded-full'>
+          <h1>Contact Us:</h1>
+        </legend>
         <form className='flex flex-col gap-8' onSubmit={onFormSubmit}>
           <div className='flex flex-col gap-4'>
             <div className='flex flex-col gap-1 p-2 bg-slate-300 rounded-xl'>
