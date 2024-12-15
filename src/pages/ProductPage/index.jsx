@@ -42,8 +42,6 @@ export default function ProductPage() {
     return <div>Error</div>;
   }
 
-  console.log(data.data);
-
   return (
     <div className="flex flex-col gap-8">
       <div className="flex flex-col gap-4 row-y-8 md:flex-row md:w-2/3 lg:w-1/2 mx-auto">
