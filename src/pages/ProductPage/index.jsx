@@ -1,4 +1,3 @@
- 
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useCart } from "../../stores/cartStore/CartContext";
@@ -47,9 +46,11 @@ export default function ProductPage() {
 
   return (
     <div className="flex flex-col gap-8">
-      <div className="md:flex gap-4 md:w-2/3 lg:w-1/2 mx-auto">
-        <div>
-          <img src={data.data.image.url} alt={data.data.image.alt} />
+      <div className="flex flex-col gap-4 row-y-8 md:flex-row md:w-2/3 lg:w-1/2 mx-auto">
+        <div className="flex justify-center">
+          <div className="max-w-96">
+            <img src={data.data.image.url} alt={data.data.image.alt} />
+          </div>
         </div>
         <section className="flex flex-col gap-4">
           <div className="flex flex-col gap-1">
