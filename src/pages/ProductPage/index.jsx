@@ -74,7 +74,7 @@ export default function ProductPage() {
       <div>
         <section className="md:w-2/3 lg:w-1/2 mx-auto flex flex-col gap-4">
           <h2 className="font-bold text-xl">Customer Feedback:</h2>
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-8">
             {data.data.reviews?.map((review) => (
               <ReviewCard review={review} key={review.id}>
                 test
