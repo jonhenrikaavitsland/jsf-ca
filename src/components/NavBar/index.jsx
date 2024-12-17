@@ -8,8 +8,6 @@ export default function NavBar() {
     setMenuOpen(!menuOpen);
   }
 
-  console.log(menuOpen);
-
   return (
     <nav className="z-10">
       <div className="p-3 m-3">
