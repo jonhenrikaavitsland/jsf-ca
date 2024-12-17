@@ -8,6 +8,8 @@ export default function NavBar() {
     setMenuOpen(!menuOpen);
   }
 
+  console.log(menuOpen);
+
   return (
     <nav className="z-10">
       <div className="p-3 m-3">
@@ -25,12 +27,24 @@ export default function NavBar() {
         </button>
         <ul className="flex flex-col gap-6 mt-6 lg:mt-0 lg:flex-row p-3">
           <li>
-            <NavLink to="/" className="p-2" onClick={toggleMenu}>
+            <NavLink
+              to="/"
+              className="p-2"
+              onClick={() => {
+                if (menuOpen) toggleMenu();
+              }}
+            >
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink to="/contact/" className="p-2" onClick={toggleMenu}>
+            <NavLink
+              to="/contact/"
+              className="p-2"
+              onClick={() => {
+                if (menuOpen) toggleMenu();
+              }}
+            >
               Contact
             </NavLink>
           </li>
