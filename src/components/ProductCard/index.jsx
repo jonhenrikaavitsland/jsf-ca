@@ -9,7 +9,10 @@ export default function ProductCard({ product }) {
   }
 
   return (
-    <div className="p-2 bg-slate-200 w-60 rounded-lg shadow-lg shadow-slate-400">
+    <div
+      className="p-2 bg-slate-200 w-60 rounded-lg shadow-lg shadow-slate-400 cursor-pointer hover:bg-slate-300"
+      onClick={() => handleProductClick(product.id)}
+    >
       <div className="aspect-square bg-gray-300">
         <img
           src={product.image.url}
