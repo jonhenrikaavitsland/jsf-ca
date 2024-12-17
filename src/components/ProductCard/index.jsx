@@ -22,10 +22,7 @@ export default function ProductCard({ product }) {
       </div>
       <section className="flex flex-col gap-4 p-3 text-center h-36 justify-between">
         <h2 className="font-bold">{product.title}</h2>
-        <button
-          className="p-3 bg-orange-400 rounded-xl font-semibold hover:bg-orange-700 hover:text-white"
-          onClick={() => handleProductClick(product.id)}
-        >
+        <button className="p-3 bg-orange-400 rounded-xl font-semibold hover:bg-orange-700 hover:text-white">
           View Product
         </button>
       </section>
