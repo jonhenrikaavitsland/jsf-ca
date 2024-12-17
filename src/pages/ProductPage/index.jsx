@@ -55,11 +55,18 @@ export default function ProductPage() {
             <h1 className="font-bold text-2xl">{data.data.title}</h1>
             <p className="text-lg">{data.data.description}</p>
           </div>
-          <div className="font-bold text-2xl">
-            <span>${data.data.discountedPrice}</span>
+          <div>
             {data.data.discountedPrice < data.data.price && (
-              <span className="bg-red-600 text-white font-bold px-2 ml-2 rounded-xl">{`-${((1 - data.data.discountedPrice / data.data.price) * 100).toFixed(0)}%`}</span>
+              <span className="line-through text-red-600 font-semibold">
+                ${data.data.price}
+              </span>
             )}
+            <div className="font-bold text-2xl">
+              <span>${data.data.discountedPrice}</span>
+              {data.data.discountedPrice < data.data.price && (
+                <span className="bg-red-600 text-white font-bold px-2 ml-2 rounded-xl">{`-${((1 - data.data.discountedPrice / data.data.price) * 100).toFixed(0)}%`}</span>
+              )}
+            </div>
           </div>
           <div>
             <button
