@@ -1,6 +1,6 @@
 {
   "name": "jsf-ca",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "course assignment for javascript frameworks",
   "main": "index.jsx",
   "type": "module",
